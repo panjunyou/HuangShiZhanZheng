@@ -1,0 +1,10 @@
+MetaName,ClassName,RowName,,,
+MetaValue,MyCardModel,MyCard,,,
+Namespaces,,,,,
+Comment,ID号,名称,卡牌预制体,兵种索引列表,相对偏移列表
+FieldName,id,name,cardPrefab,placeablesIndices,relativeOffsets
+FieldType,uint,string,string,int,Vector3
+FieldHint,,,,ValArray,RefArray
+,20000,Archers,CardArchers,10000|10000|10000,"0.87,0,0.5|0,0,0|-0.87,0,0.5"
+,20001,Mage,CardMage,10001,"0,0,0"
+,20002,Warrior,CardViking,10002,"0,0,0"

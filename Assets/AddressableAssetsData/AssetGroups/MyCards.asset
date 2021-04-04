@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: MyCards
+  m_EditorClassIdentifier: 
+  m_GroupName: MyCards
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d5f2d90fdb51c3a4c8e3b80c9f36fc95
+  m_SerializeEntries:
+  - m_GUID: 1ca794666b8831249a52dbe571fb3cf4
+    m_Address: "\u5361\u724C"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2639158021876671121, guid: 1ca794666b8831249a52dbe571fb3cf4,
+      type: 3}
+    m_TargetAsset: {fileID: 2639158021876671121, guid: 1ca794666b8831249a52dbe571fb3cf4,
+      type: 3}
+  - m_GUID: 56938aee743e6304493b59b3d09fd8b9
+    m_Address: "\u5F13\u7BAD\u624B\u5361\u724C"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 8614018074700641685, guid: 56938aee743e6304493b59b3d09fd8b9,
+      type: 3}
+    m_TargetAsset: {fileID: 8614018074700641685, guid: 56938aee743e6304493b59b3d09fd8b9,
+      type: 3}
+  - m_GUID: 67a5842a00dc4b34b81e4e0e856b6032
+    m_Address: "\u6218\u58EB\u5361\u724C"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4567096280790078710, guid: 67a5842a00dc4b34b81e4e0e856b6032,
+      type: 3}
+    m_TargetAsset: {fileID: 4567096280790078710, guid: 67a5842a00dc4b34b81e4e0e856b6032,
+      type: 3}
+  - m_GUID: 82980dca8682567419710c47eb79238a
+    m_Address: "\u6CD5\u5E08\u5361\u724C"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 1320244750965629829, guid: 82980dca8682567419710c47eb79238a,
+      type: 3}
+    m_TargetAsset: {fileID: 1320244750965629829, guid: 82980dca8682567419710c47eb79238a,
+      type: 3}
+  - m_GUID: 826e5c336e8ace646bc116153d59e14f
+    m_Address: "\u724C\u80CC"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2639158021876671121, guid: 826e5c336e8ace646bc116153d59e14f,
+      type: 3}
+    m_TargetAsset: {fileID: 2639158021876671121, guid: 826e5c336e8ace646bc116153d59e14f,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 62fd5e501abef4d188f123698eca5c92, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 21800c8e0d9517a4bb61c20872ef6363, type: 2}
+    - {fileID: 11400000, guid: 6f20670959a00e545bdccc104f9c0bac, type: 2}

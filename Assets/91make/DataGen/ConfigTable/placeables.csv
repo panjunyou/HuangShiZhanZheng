@@ -1,0 +1,10 @@
+MetaName,ClassName,RowName,,,,,,,,,,,,,,
+MetaValue,MyPlaceableModel,MyPlaceable,,,,,,,,,,,,,,
+Namespaces,UnityRoyale,,,,,,,,,,,,,,,
+Comment,ID号,名称,兵种类型,本方预制体,敌方预制体,攻击类型,目标类型,攻击速率,单次攻击伤害,攻击范围,血值,攻击音效,死亡音效,移动速度,存在时间（仅法术和障碍物）,每秒攻击伤害
+FieldName,id,name,pType,associatedPrefab,alternatePrefab,attackType,targetType,attackRatio,damagePerAttack,attackRange,hitPoints,attackClip,dieClip,speed,lifeTime,damagePerSecond
+FieldType,uint,string,Placeable.PlaceableType,string,string,ThinkingPlaceable.AttackType,Placeable.PlaceableTarget,float,float,float,float,string,string,float,float,float
+FieldHint,,,Enum,,,Enum,Enum,,,,,,,,,
+,10000,Archer,Unit,Archer Red,Archer Blue,Ranged,Both,1.5,1,6,8,,,4,5,1
+,10001,Mage,Unit,Mage Red,Mage Blue,Ranged,Both,1.5,3,4,10,,,3,5,1
+,10002,Warrior,Unit,Warrior Red,Warrior Blue,Melee,Both,2.5,4,2.5,20,,,2,5,1

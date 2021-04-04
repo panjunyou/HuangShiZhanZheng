@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MyTingTower
+  m_Controller: {fileID: 9100000, guid: 37594f01984414613b3ba897e300f3e9, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3097e307c4bd26d429d44f28d4682f9a, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: b526f6d3ea1ff0a4aaf81b8c4db87329, type: 2}
