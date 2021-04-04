@@ -87,13 +87,13 @@ MonoBehaviour:
       - m_Id: 8a6a19676e1b64ee9b388011d7c59596
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
       - m_Id: 1664b6053a27a4ac5bbc7846a27f09f1
-        m_Value: Assets/StreamingAssets/[BuildTarget]
+        m_Value: Assets/MyStreamingAssets/[BuildTarget]
       - m_Id: dba6ad3240f6c432c9ec347abe95130a
-        m_Value: Assets/StreamingAssets/[BuildTarget]
+        m_Value: Assets/MyStreamingAssets/[BuildTarget]
       - m_Id: 01d5a54ce7c8f4e6fb012b4231c0e6b9
-        m_Value: ServerData/[BuildTarget]
+        m_Value: MyServerData/[BuildTarget]
       - m_Id: 18d330823692a436dad1d1a4529a9d5e
-        m_Value: ServerData/[BuildTarget]
+        m_Value: MyServerData/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: 8a6a19676e1b64ee9b388011d7c59596
       m_Name: BuildTarget
