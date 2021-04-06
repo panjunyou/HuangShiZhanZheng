@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: MyCards
   m_Data:
     m_SerializedData: []
-  m_GUID: d5f2d90fdb51c3a4c8e3b80c9f36fc95
+  m_GUID: 1c50d7a061c5dc447958582f3d1b2f8f
   m_SerializeEntries:
   - m_GUID: 1ca794666b8831249a52dbe571fb3cf4
     m_Address: "\u5361\u724C"
@@ -61,5 +61,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 62fd5e501abef4d188f123698eca5c92, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 21800c8e0d9517a4bb61c20872ef6363, type: 2}
-    - {fileID: 11400000, guid: 6f20670959a00e545bdccc104f9c0bac, type: 2}
+    - {fileID: 11400000, guid: 6806a764a10c2f040b6dd858d3828d3c, type: 2}
+    - {fileID: 11400000, guid: 85c943cb58e707c44b055ae57d73ae2b, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d17a21594effb4e9591490b009e7aa, type: 3}
   m_Name: MyPlaceables_BundledAssetGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: 963742a826f8b9848805e7585044447d, type: 2}
+  m_Group: {fileID: 11400000, guid: 9f854899dc3c92648bcad94ca049d290, type: 2}
   m_Compression: 1
   m_IncludeAddressInCatalog: 1
   m_IncludeGUIDInCatalog: 1
@@ -31,9 +31,9 @@ MonoBehaviour:
   m_RedirectLimit: -1
   m_RetryCount: 0
   m_BuildPath:
-    m_Id: 01d5a54ce7c8f4e6fb012b4231c0e6b9
+    m_Id: 1664b6053a27a4ac5bbc7846a27f09f1
   m_LoadPath:
-    m_Id: 18d330823692a436dad1d1a4529a9d5e
+    m_Id: dba6ad3240f6c432c9ec347abe95130a
   m_BundleMode: 0
   m_AssetBundleProviderType:
     m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

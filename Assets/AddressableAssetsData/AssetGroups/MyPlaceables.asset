@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: MyPlaceables
   m_Data:
     m_SerializedData: []
-  m_GUID: 99005a04be981f8488de39785fb648ed
+  m_GUID: c119d68c9849f27428d45d4242a327ba
   m_SerializeEntries:
   - m_GUID: b388405d7296fab4daaebc1d1ea380f8
     m_Address: "\u5F13\u7BAD\u624B-\u7EA2"
@@ -67,5 +67,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 62fd5e501abef4d188f123698eca5c92, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: dd123f56705704b4d90b2ec9de671f14, type: 2}
-    - {fileID: 11400000, guid: da8208790e1791a43aadb2f33f7409bb, type: 2}
+    - {fileID: 11400000, guid: a1c86b708f160344e880da5f9f80f9f3, type: 2}
+    - {fileID: 11400000, guid: 63416c5ff945bfc429c38058a13f3f22, type: 2}
