@@ -93,7 +93,7 @@ MonoBehaviour:
       - m_Id: 01d5a54ce7c8f4e6fb012b4231c0e6b9
         m_Value: ServerData/[BuildTarget]
       - m_Id: 18d330823692a436dad1d1a4529a9d5e
-        m_Value: ServerData/[BuildTarget]
+        m_Value: https://raw.githubusercontent.com/panjunyou/HuangShiZhanZheng/1.2/ServerData/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: 8a6a19676e1b64ee9b388011d7c59596
       m_Name: BuildTarget
@@ -144,7 +144,7 @@ MonoBehaviour:
           m_Key: HostingServicePort
         - m_AssemblyName: mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
           m_ClassName: System.String
-          m_Data: Assets/StreamingAssets/aa/StandaloneWindows64;ServerData/StandaloneWindows64
+          m_Data: Assets/StreamingAssets/StandaloneWindows64;ServerData/StandaloneWindows64;Assets/StreamingAssets/aa/StandaloneWindows64;ServerData/StandaloneWindows64
           m_Key: ContentRoot
         - m_AssemblyName: mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
           m_ClassName: System.Boolean
