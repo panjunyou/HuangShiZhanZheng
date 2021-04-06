@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityRoyale;
+using UnityEngine.AddressableAssets;
 
 public enum AIState
 {
@@ -15,7 +14,7 @@ public class MyAIBaes : MonoBehaviour
 {
     public MyAIBaes target = null;//攻击目标
 
-    public GameObject ProfInst;//投掷物
+    public AssetReference ProfInst;//投掷物
     public Transform FirePos;//投掷位置
 
     public AIState state = AIState.Idle;
@@ -37,9 +36,12 @@ public class MyAIBaes : MonoBehaviour
     }
 
     //Animation->Evemts=法师,射手
-    public void OnFireProjectile()
+    public async void OnFireProjectile()
     {
-        var go = Instantiate(ProfInst, FirePos.position, Quaternion.identity, MyProjectileMgr.Instance.transform);
+        // var go = Instantiate(ProfInst, FirePos.position, Quaternion.identity, MyProjectileMgr.Instance.transform);
+
+        GameObject go=await Addressables.InstantiateAsync(ProfInst, FirePos.position, Quaternion.identity, MyProjectileMgr.Instance.transform).Task;
+
         var MyProjectileInst = go.GetComponent<MyProjectile>();
         MyProjectileInst.caster = this;
         MyProjectileInst.target = this.target;
@@ -61,7 +63,8 @@ public class MyAIBaes : MonoBehaviour
         }
         else
         {
-            Destroy(go);
+            // Destroy(go);
+            Addressables.ReleaseInstance(go);
         }
     }
 }

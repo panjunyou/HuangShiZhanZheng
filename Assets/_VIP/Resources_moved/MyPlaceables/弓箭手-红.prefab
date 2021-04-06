@@ -1538,7 +1538,7 @@ GameObject:
   - component: {fileID: 6148851528207623511}
   - component: {fileID: 3625580018565945896}
   m_Layer: 0
-  m_Name: Archer Red
+  m_Name: "\u5F13\u7BAD\u624B-\u7EA2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1744,7 +1744,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  ProfInst: {fileID: 953002537907380271, guid: e12f67aa396803b4db1f156b4de6a91f, type: 3}
+  ProfInst:
+    m_AssetGUID: bbbf735d73da0264a9dd528a95e252b0
+    m_SubObjectName: 
+    m_SubObjectType: 
   FirePos: {fileID: 2574879117666418469}
   state: 0
 --- !u!1 &5557141645663679012

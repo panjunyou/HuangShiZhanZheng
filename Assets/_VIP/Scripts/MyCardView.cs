@@ -88,7 +88,8 @@ public class MyCardView : MonoBehaviour,IDragHandler,IPointerUpHandler,IPointerD
 
                 foreach (Transform placeable in previewHolder)
                 {
-                    Destroy(placeable.gameObject );
+                    //  Destroy(placeable.gameObject );
+                    Addressables.ReleaseInstance(placeable.gameObject);
                 }
             }
         }
@@ -123,7 +124,8 @@ public class MyCardView : MonoBehaviour,IDragHandler,IPointerUpHandler,IPointerD
                 //   MyCardMgr.Instance.StartCoroutine(MyCardMgr.Instance.创建卡牌到预览区(0.2f));
                 await MyCardMgr.Instance.创建卡牌到预览区(0.2f);
 
-                Destroy(gameObject);
+                // Destroy(gameObject);
+                Addressables.ReleaseInstance(gameObject);
             }
         }
         else

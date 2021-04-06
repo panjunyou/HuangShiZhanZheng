@@ -937,7 +937,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 2.842171e-16, z: 2.88658e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2348266242741588439}
+  - {fileID: 5768343598769344499}
   m_Father: {fileID: 861500025}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -9.710932, y: -44.96636, z: -97.80194}
@@ -1387,7 +1387,7 @@ GameObject:
   - component: {fileID: -2149068103628860852}
   - component: {fileID: -188750722414556780}
   m_Layer: 0
-  m_Name: Mage Red
+  m_Name: "\u6CD5\u5E08-\u7EA2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,8 +1596,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  ProfInst: {fileID: 2348266241764958831, guid: 16df5ca33880bf7409922364f4bdcc3d,
-    type: 3}
+  ProfInst:
+    m_AssetGUID: 34be0ba03aab5054085a63cfb1f10ef6
+    m_SubObjectName: 
+    m_SubObjectType: 
   FirePos: {fileID: 1202322275}
   state: 0
 --- !u!1 &1135473222
@@ -2974,7 +2976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16df5ca33880bf7409922364f4bdcc3d, type: 3}
---- !u!4 &2348266242741588439 stripped
+--- !u!4 &5768343598769344499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2348266241764958832, guid: 16df5ca33880bf7409922364f4bdcc3d,
     type: 3}
@@ -2987,11 +2989,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1797861100}
     m_Modifications:
-    - target: {fileID: 1052028774637471983, guid: d43ab4448d19fb949a5003f639b54609,
-        type: 3}
-      propertyPath: m_Name
-      value: FaceFire
-      objectReference: {fileID: 0}
     - target: {fileID: 1052028774637471982, guid: d43ab4448d19fb949a5003f639b54609,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3046,6 +3043,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052028774637471983, guid: d43ab4448d19fb949a5003f639b54609,
+        type: 3}
+      propertyPath: m_Name
+      value: FaceFire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d43ab4448d19fb949a5003f639b54609, type: 3}

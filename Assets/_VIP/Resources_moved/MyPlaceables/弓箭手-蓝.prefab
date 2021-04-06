@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5537164977549460556, guid: f7e6e31c5324d874db515c8ca4922190,
         type: 3}
       propertyPath: m_Name
-      value: Archer Blue
+      value: "\u5F13\u7BAD\u624B-\u84DD"
       objectReference: {fileID: 0}
     - target: {fileID: 7741071500584641686, guid: f7e6e31c5324d874db515c8ca4922190,
         type: 3}
@@ -72,6 +72,11 @@ PrefabInstance:
       propertyPath: FirePos
       value: 
       objectReference: {fileID: 5901041432101623465}
+    - target: {fileID: 3625580018565945896, guid: f7e6e31c5324d874db515c8ca4922190,
+        type: 3}
+      propertyPath: ProfInst.m_AssetGUID
+      value: bbbf735d73da0264a9dd528a95e252b0
+      objectReference: {fileID: 0}
     - target: {fileID: 6134970203849225880, guid: f7e6e31c5324d874db515c8ca4922190,
         type: 3}
       propertyPath: m_Layer

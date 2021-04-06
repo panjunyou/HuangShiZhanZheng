@@ -9,19 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1122871589, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_Name
-      value: Mage Blue
+      value: "\u6CD5\u5E08-\u84DD"
       objectReference: {fileID: 0}
     - target: {fileID: -188750722414556780, guid: ddbc89a2e5731354497399c2803d9354,
         type: 3}
       propertyPath: ProfInst
       value: 
-      objectReference: {fileID: 2348266241764958831, guid: 208c852a323ae3d44998f5b371b37ce4,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: -188750722414556780, guid: ddbc89a2e5731354497399c2803d9354,
         type: 3}
       propertyPath: FirePos
       value: 
       objectReference: {fileID: 8584991783908798098}
+    - target: {fileID: -188750722414556780, guid: ddbc89a2e5731354497399c2803d9354,
+        type: 3}
+      propertyPath: ProfInst.m_AssetGUID
+      value: 2d5a40e9a4a6ffe49912e6a6a7a64fa7
+      objectReference: {fileID: 0}
     - target: {fileID: 1122871592, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: MyProjectilts
+  m_EditorClassIdentifier: 
+  m_GroupName: MyProjectilts
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b9c5ec465e3acf1438ec24d9b83ff9eb
+  m_SerializeEntries:
+  - m_GUID: bbbf735d73da0264a9dd528a95e252b0
+    m_Address: Arrow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 953002537907380271, guid: bbbf735d73da0264a9dd528a95e252b0,
+      type: 3}
+    m_TargetAsset: {fileID: 953002537907380271, guid: bbbf735d73da0264a9dd528a95e252b0,
+      type: 3}
+  - m_GUID: 2d5a40e9a4a6ffe49912e6a6a7a64fa7
+    m_Address: Fire Blue
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2348266241764958831, guid: 2d5a40e9a4a6ffe49912e6a6a7a64fa7,
+      type: 3}
+    m_TargetAsset: {fileID: 2348266241764958831, guid: 2d5a40e9a4a6ffe49912e6a6a7a64fa7,
+      type: 3}
+  - m_GUID: 34be0ba03aab5054085a63cfb1f10ef6
+    m_Address: Fire Red
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2348266241764958831, guid: 34be0ba03aab5054085a63cfb1f10ef6,
+      type: 3}
+    m_TargetAsset: {fileID: 2348266241764958831, guid: 34be0ba03aab5054085a63cfb1f10ef6,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 62fd5e501abef4d188f123698eca5c92, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fcb7c874674c4aa478c7c833d94a1885, type: 2}
+    - {fileID: 11400000, guid: 4306b89f527d4d04a9fe8d503838a8a5, type: 2}

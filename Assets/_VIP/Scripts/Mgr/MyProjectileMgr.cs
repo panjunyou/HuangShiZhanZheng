@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class MyProjectileMgr : MonoBehaviour
 {
@@ -58,7 +59,8 @@ public class MyProjectileMgr : MonoBehaviour
             var proj = DesProjectiles[0];
             DesProjectiles.Remove(proj);
             myProjectiles.Remove(proj);
-            Destroy(proj.gameObject);
+            // Destroy(proj.gameObject);
+            Addressables.ReleaseInstance(proj.gameObject);
         }
     }
 }

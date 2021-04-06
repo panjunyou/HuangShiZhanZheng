@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.AI;
 using UnityRoyale;
 
@@ -234,7 +235,8 @@ public class MyPlaceableMgr : MonoBehaviour
             DesPlaceableView.Remove(desplaceableView);
 
              pviews.Remove(desplaceableView);
-             Destroy(desplaceableView.gameObject);
+            // Destroy(desplaceableView.gameObject);
+            Addressables.ReleaseInstance(desplaceableView.gameObject);
         }
     }
 

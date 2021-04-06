@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: MyDlls
+  m_EditorClassIdentifier: 
+  m_GroupName: MyDlls
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5138d2395e3c2ca45848216b952bd53a
+  m_SerializeEntries:
+  - m_GUID: a4d6d4c1b423a3947996c3368d794c97
+    m_Address: HelloDll.pdb
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4900000, guid: a4d6d4c1b423a3947996c3368d794c97, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: a4d6d4c1b423a3947996c3368d794c97, type: 3}
+  - m_GUID: 03e1987aa2db8f94c8725e10615b74d6
+    m_Address: HelloDll.dll
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4900000, guid: 03e1987aa2db8f94c8725e10615b74d6, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 03e1987aa2db8f94c8725e10615b74d6, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 62fd5e501abef4d188f123698eca5c92, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9152b0c1a49bec84da435931b86a0d9e, type: 2}
+    - {fileID: 11400000, guid: 3bbab147dfd02034e951d2718dc4c8ca, type: 2}

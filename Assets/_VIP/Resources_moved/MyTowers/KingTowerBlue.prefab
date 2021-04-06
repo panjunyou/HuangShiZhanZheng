@@ -42,16 +42,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: KingTowerBlue
       objectReference: {fileID: 0}
-    - target: {fileID: 5026307152195378039, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5,
-        type: 3}
-      propertyPath: data.faction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5026307152195378039, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5,
-        type: 3}
-      propertyPath: data.damagePerAttack
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4876061136530742093, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -107,17 +97,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 790408640, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: -6219580280388906442, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5,
         type: 3}
-      propertyPath: ProfInst
-      value: 
-      objectReference: {fileID: 2348266241764958831, guid: 208c852a323ae3d44998f5b371b37ce4,
-        type: 3}
+      propertyPath: ProfInst.m_AssetGUID
+      value: 2d5a40e9a4a6ffe49912e6a6a7a64fa7
+      objectReference: {fileID: 0}
     - target: {fileID: -6219580280388906442, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5,
         type: 3}
       propertyPath: FirePos
       value: 
       objectReference: {fileID: 2535191070103460517}
+    - target: {fileID: 5026307152195378039, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5,
+        type: 3}
+      propertyPath: data.faction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026307152195378039, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5,
+        type: 3}
+      propertyPath: data.damagePerAttack
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4876061136533166509, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -138,10 +141,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6f02d3a5a384c75409991386d154bf8e, type: 2}
-    - target: {fileID: 790408640, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5, type: 3}
 --- !u!4 &6955230303822441512 stripped
