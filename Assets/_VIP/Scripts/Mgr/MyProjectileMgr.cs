@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityRoyale;
 
 public class MyProjectileMgr : MonoBehaviour
 {
@@ -10,57 +11,75 @@ public class MyProjectileMgr : MonoBehaviour
     public List<MyProjectile> MineProjList;//
 
     public List<MyProjectile> HisProjList;//
+
     private void Awake()
     {
         Instance = this;
 
         MineProjList = new List<MyProjectile>();
         HisProjList = new List<MyProjectile>();
+
     }
 
     private void Update()
     {
         //子弹AI
-        UpdateProjectiles(MineProjList);
-        UpdateProjectiles(HisProjList);
+        UpdateProjectiles();
+  
     }
 
-    private void UpdateProjectiles(List<MyProjectile> myProjectiles)
+    private void UpdateProjectiles()
     {
         List<MyProjectile> DesProjectiles = new List<MyProjectile>();
 
-        for (int i = 0; i < myProjectiles.Count; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            var projInst = myProjectiles[i];
+            var projInst1 = transform.GetChild(i).gameObject;
 
-            projInst.progress += Time.deltaTime * projInst.Speed;
-
-            if (projInst.caster != null && projInst.target != null && projInst.caster.state == AIState.Attack)
+            var projInst = projInst1.GetComponent<MyProjectile>();
+          
+            if (projInst.isUse)
             {
-                projInst.transform.position = Vector3.Lerp(projInst.caster.FirePos.position, projInst.target.transform.position + Vector3.up, projInst.progress);
-            }
-            else
-            {
-                DesProjectiles.Add(projInst);
-            }
+                projInst.progress += Time.deltaTime * projInst.Speed;
 
-            if (projInst.progress >= 1f)
-            {
+                if (projInst.caster != null && projInst.target != null && projInst.caster.state == AIState.Attack)
+                {
+                    projInst.transform.position = Vector3.Lerp(projInst.caster.FirePos.position, projInst.target.transform.position + Vector3.up, projInst.progress);
+                    projInst.transform.forward = projInst.target.gameObject.transform.position + Vector3.up;
+                }
+                else
+                {
+                    if (!DesProjectiles.Contains(projInst))
+                    {
+                        DesProjectiles.Add(projInst);
+ 
+                    }
+                }
 
-                projInst.caster.OnDealDamage();
+                if (projInst.progress >= 1f)
+                {
 
-                DesProjectiles.Add(projInst);
+                    projInst.caster.OnDealDamage();
 
-            }
+                    if (!DesProjectiles.Contains(projInst))
+                    {
+                         DesProjectiles.Add(projInst);
+                  
+                    }
+
+                }
+            }            
         }
-
+        //投掷物销毁处理
         while (DesProjectiles.Count > 0)
         {
-            var proj = DesProjectiles[0];
-            DesProjectiles.Remove(proj);
-            myProjectiles.Remove(proj);
-            // Destroy(proj.gameObject);
-            Addressables.ReleaseInstance(proj.gameObject);
+            var p = DesProjectiles[0];
+            DesProjectiles.Remove(p);
+            MineProjList.Remove(p);
+            HisProjList.Remove(p);
+            Addressables.ReleaseInstance(p.gameObject);
         }
     }
+
+     
 }

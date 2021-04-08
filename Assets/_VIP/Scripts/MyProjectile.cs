@@ -11,4 +11,6 @@ public class MyProjectile : MonoBehaviour
 
     public float Speed=1;
 
+    public bool isUse = false;//这投掷物是否使用，使用才能执行它
+
 }

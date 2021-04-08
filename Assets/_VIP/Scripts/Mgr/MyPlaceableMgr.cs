@@ -233,10 +233,25 @@ public class MyPlaceableMgr : MonoBehaviour
         {
             var desplaceableView = DesPlaceableView[0];
             DesPlaceableView.Remove(desplaceableView);
-
-             pviews.Remove(desplaceableView);
-            // Destroy(desplaceableView.gameObject);
-            Addressables.ReleaseInstance(desplaceableView.gameObject);
+            
+            //TODO
+            //不是通过Addressables.InstantiateAsync（）创建的不能使用Addressables.ReleaseInstance ，现在塔不是通过Addressables.InstantiateAsync（）创建
+            if (desplaceableView.data.pType==Placeable.PlaceableType.Building)
+            {
+                pviews.Remove(desplaceableView);
+                Destroy(desplaceableView.gameObject);
+            }
+            else
+            {
+                if (Addressables.ReleaseInstance(desplaceableView.gameObject))
+                {
+                    pviews.Remove(desplaceableView);
+                }
+                else
+                {
+                    Debug.LogError("Addressables.ReleaseInstance失败！");
+                }             
+            }
         }
     }
 
@@ -282,6 +297,15 @@ public class MyPlaceableMgr : MonoBehaviour
         }      
 
         target.state = AIState.Die;
+
+        //显示GameOver画面
+        if (target.gameObject.name.Equals(trhistower.name)|| target.gameObject.name.Equals(trMyTower.name))
+        {
+            //注册消息
+            KBEngine.Event.fireOut("OnGameOver", target_View.data.faction);//正营为参数
+            UIPage.ShowPageAsync<GameOverPage>(target_View.data.faction);//可以给新显示的页面穿参数
+        }
+
     }
 
     

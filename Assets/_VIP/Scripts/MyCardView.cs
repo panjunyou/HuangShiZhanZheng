@@ -15,6 +15,8 @@ public class MyCardView : MonoBehaviour,IDragHandler,IPointerUpHandler,IPointerD
 
     private bool isDragging = false;//卡牌是否变小兵
 
+    private bool isDrag = false;//鼠标是否在拖动
+
     private Transform previewHolder;
 
     private Camera MainCam;
@@ -43,6 +45,7 @@ public class MyCardView : MonoBehaviour,IDragHandler,IPointerUpHandler,IPointerD
 
     public async void OnDrag(PointerEventData eventData)
     {
+        
         //屏幕坐标转世界坐标
         RectTransformUtility.ScreenPointToWorldPointInRectangle(transform.parent as RectTransform,
             eventData.position, null, out Vector3 posWorld);
@@ -58,22 +61,38 @@ public class MyCardView : MonoBehaviour,IDragHandler,IPointerUpHandler,IPointerD
         //如果碰到场景
         if (hitGround)
         {
+            
             previewHolder.position = hit.point;
 
             if (isDragging==false)
             {
+               
                 isDragging = true;
 
                 print("命中地面，可以变兵");
+               
+                //清空预选列表
+                if (MyPviews.Count>0)
+                {
+                    MyPviews.Clear();
+                }
+
+                isDrag = true;
 
                 CanvasGroupInst.alpha = 0;
 
-                MyPviews =await CreatePlacable(data, previewHolder, previewHolder.position,Placeable.Faction.Player );
-
+                MyPviews =await CreatePlacable(data, previewHolder, previewHolder.position,Placeable.Faction.Player );               
+                
                 //因为等带过程中鼠标改变， 所以从新设置小兵位置               
                 for (int i = 0; i < data.placeablesIndices.Length; i++)
                 {
                     MyPviews[i].transform.localPosition = data.relativeOffsets[i];
+                }
+
+                //如果在等待加载过程中鼠标放开
+                if (isDrag == false)
+                {
+                    await SetPlayersToMgr();
                 }
 
             }
@@ -91,6 +110,11 @@ public class MyCardView : MonoBehaviour,IDragHandler,IPointerUpHandler,IPointerD
                     //  Destroy(placeable.gameObject );
                     Addressables.ReleaseInstance(placeable.gameObject);
                 }
+                //清空预选列表
+                if (MyPviews.Count > 0)
+                {
+                    MyPviews.Clear();
+                }
             }
         }
 
@@ -98,6 +122,8 @@ public class MyCardView : MonoBehaviour,IDragHandler,IPointerUpHandler,IPointerD
     
     public async void OnPointerUp(PointerEventData eventData)
     {
+        isDrag = false ;
+
         MyCardMgr.Instance.forbiddenAreaRenderer.enabled = false;
 
         //位置发射射线
@@ -109,23 +135,13 @@ public class MyCardView : MonoBehaviour,IDragHandler,IPointerUpHandler,IPointerD
         //如果碰到场景
         if (hitGround)
         {
-            if (isDragging==true)
+            //MyPviews.Count是否加载完成
+            if (isDragging==true&& MyPviews.Count == data.placeablesIndices.Length)
             {
                 //播放音响
-               // previewHolder.GetChild(0).GetComponent<AudioSource>().Play();
+                // previewHolder.GetChild(0).GetComponent<AudioSource>().Play();
 
-                OnCardUsed(MyPviews);
-
-                //把牌放到出牌区
-                //  MyCardMgr.Instance. StartCoroutine(MyCardMgr.Instance.预览区到出牌区(index, 0.1f));
-                await MyCardMgr.Instance.预览区到出牌区(index, 0.1f);
-
-                //在创建一张牌放到预览区                
-                //   MyCardMgr.Instance.StartCoroutine(MyCardMgr.Instance.创建卡牌到预览区(0.2f));
-                await MyCardMgr.Instance.创建卡牌到预览区(0.2f);
-
-                // Destroy(gameObject);
-                Addressables.ReleaseInstance(gameObject);
+                await SetPlayersToMgr();
             }
         }
         else
@@ -137,18 +153,43 @@ public class MyCardView : MonoBehaviour,IDragHandler,IPointerUpHandler,IPointerD
 
     private void OnCardUsed(List<MyPlaceableView> views)
     {
-        for (int i = 0; i < views.Count; i++)
-        {
-            views[i].gameObject.transform.SetParent(MyPlaceableMgr.Instance.transform, true);
-            MyPlaceableMgr.Instance.mine.Add(views[i]);
-        }
+        //for (int i = 0; i < views.Count; i++)
+        //{
+        //    views[i].gameObject.transform.SetParent(MyPlaceableMgr.Instance.transform, true);
+        //    MyPlaceableMgr.Instance.mine.Add(views[i]);
+        //    views.Remove(views[i])
+        //}
 
+        while (views.Count>0)
+        {
+            var vv = views[0];
+            views.Remove(vv);
+            vv.gameObject.transform.SetParent(MyPlaceableMgr.Instance.transform, true);
+            MyPlaceableMgr.Instance.mine.Add(vv);
+        }
         //for (int i = previewHolder.childCount-1; i >=0 ; i--)
         //{
         //    Transform placeable = previewHolder.GetChild(i);
         //    placeable.SetParent(MyPlaceableMgr.Instance.transform, true);
         //    MyPlaceableMgr.Instance.mine.Add(placeable.GetComponent<MyPlaceableView>());
         //}
+    }
+    
+    //
+    private async Task SetPlayersToMgr()
+    {
+        OnCardUsed(MyPviews);
+
+        //把牌放到出牌区
+        //  MyCardMgr.Instance. StartCoroutine(MyCardMgr.Instance.预览区到出牌区(index, 0.1f));
+        await MyCardMgr.Instance.预览区到出牌区(index, 0.1f);
+
+        //在创建一张牌放到预览区                
+        //   MyCardMgr.Instance.StartCoroutine(MyCardMgr.Instance.创建卡牌到预览区(0.2f));
+        await MyCardMgr.Instance.创建卡牌到预览区(0.2f);
+
+        // Destroy(gameObject);
+        Addressables.ReleaseInstance(gameObject);
     }
 
     public  static async Task< List<MyPlaceableView>>  CreatePlacable(MyCard data1,Transform parent, Vector3 Pos, Placeable.Faction faction)

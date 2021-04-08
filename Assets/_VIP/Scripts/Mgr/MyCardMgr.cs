@@ -27,7 +27,7 @@ public class MyCardMgr : MonoBehaviour
         Instance = this;
     }
 
-    async void Start()
+     void  Start()
     {
         //StartCoroutine(创建卡牌到预览区(0.5f));
         //StartCoroutine(预览区到出牌区(0, 0.7f));
@@ -51,16 +51,19 @@ public class MyCardMgr : MonoBehaviour
 
         //await 创建卡牌到预览区(2f);
 
-        await 创建卡牌到预览区(0.5f);
-        await 预览区到出牌区(0, 0.5f);
+        //加载出牌UI
+        UIPage.ShowPageAsync<DeckPage>( async ()=> {
+            await 创建卡牌到预览区(0.5f);
+            await 预览区到出牌区(0, 0.5f);
 
-        await 创建卡牌到预览区(0.5f);
-        await 预览区到出牌区(1, 0.5f);
+            await 创建卡牌到预览区(0.5f);
+            await 预览区到出牌区(1, 0.5f);
 
-        await 创建卡牌到预览区(0.5f);
-        await 预览区到出牌区(2, 0.5f);
+            await 创建卡牌到预览区(0.5f);
+            await 预览区到出牌区(2, 0.5f);
 
-        await 创建卡牌到预览区(0.5f);
+            await 创建卡牌到预览区(0.5f);
+        });       
     }
 
     //用（async）声明为异步方法， 使用（await new）返回值必须为 Task（任务） 

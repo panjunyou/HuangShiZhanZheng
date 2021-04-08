@@ -14,7 +14,8 @@ public class MyAIBaes : MonoBehaviour
 {
     public MyAIBaes target = null;//攻击目标
 
-    public AssetReference ProfInst;//投掷物
+     public AssetReference ProfInst;//投掷物
+ 
     public Transform FirePos;//投掷位置
 
     public AIState state = AIState.Idle;
@@ -38,33 +39,27 @@ public class MyAIBaes : MonoBehaviour
     //Animation->Evemts=法师,射手
     public async void OnFireProjectile()
     {
-        // var go = Instantiate(ProfInst, FirePos.position, Quaternion.identity, MyProjectileMgr.Instance.transform);
-
         GameObject go=await Addressables.InstantiateAsync(ProfInst, FirePos.position, Quaternion.identity, MyProjectileMgr.Instance.transform).Task;
 
+        if (go == null) return;
+        
         var MyProjectileInst = go.GetComponent<MyProjectile>();
         MyProjectileInst.caster = this;
         MyProjectileInst.target = this.target;
 
-        if (target != null)
+
+        var MyView = GetComponent<MyPlaceableView>().data;
+
+        if (MyView.faction == Placeable.Faction.Player)
         {
-            go.transform.forward = target.gameObject.transform.position + Vector3.up;
-
-            var MyView= GetComponent<MyPlaceableView>().data;
-
-            if (MyView.faction==Placeable.Faction.Player)
-            {
-                MyProjectileMgr.Instance.MineProjList.Add(MyProjectileInst);
-            }
-            else
-            {
-                MyProjectileMgr.Instance.HisProjList.Add(MyProjectileInst);
-            }
+            MyProjectileMgr.Instance.MineProjList.Add(MyProjectileInst);
         }
         else
         {
-            // Destroy(go);
-            Addressables.ReleaseInstance(go);
+            MyProjectileMgr.Instance.HisProjList.Add(MyProjectileInst);
         }
+
+        //投掷物赋值完成才能执行
+        MyProjectileInst.isUse = true;
     }
 }
