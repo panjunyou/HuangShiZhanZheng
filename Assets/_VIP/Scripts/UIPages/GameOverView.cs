@@ -25,7 +25,7 @@ public partial class GameOverPage
 	{
 		//每次显示该UI,都要显示获胜方动画
 		var faction=(Faction)data;
-		var winner = faction == Faction.Player ? kingBlue : kingRed;
+		var winner = faction == Faction.Player ? kingRed : kingBlue;
 
 		var cg = winner.GetComponent<CanvasGroup>();
 		cg.alpha = 0;

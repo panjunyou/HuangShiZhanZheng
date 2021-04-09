@@ -13,14 +13,10 @@ MonoBehaviour:
   m_Name: AddressableAssetSettings
   m_EditorClassIdentifier: 
   m_DefaultGroup: 0c831ad4e1106e54fbb30acb6d69d299
-  m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_BundleLocalCatalog: 0
   m_DisableCatalogUpdateOnStart: 0
-  m_IgnoreUnsupportedFilesInBuild: 0
   m_UniqueBundleIds: 0
-  m_maxConcurrentWebRequests: 500
-  m_ContiguousBundles: 0
   m_RemoteCatalogBuildPath:
     m_Id: 01d5a54ce7c8f4e6fb012b4231c0e6b9
   m_RemoteCatalogLoadPath:

@@ -12,6 +12,23 @@ public partial class DeckPage
 	{
 		//KBEngine.Event.registerOut("MyEventName", this, "MyEventHandler");
 
+		//MyCardMgr.Instance.canvas = this.transform;
+		//MyCardMgr.Instance.startPos = startPos;
+		//MyCardMgr.Instance.endPos = endPos;
+
+		//for (int i = 0; i < panel.transform.childCount; i++)
+		//{
+		//	MyCardMgr.Instance.cards[i] = panel.transform.GetChild(i).transform;
+		//}
+		
+	}
+
+	//public void MyEventHandler()
+	//{
+	//}
+
+	protected override void OnActive()
+	{
 		MyCardMgr.Instance.canvas = this.transform;
 		MyCardMgr.Instance.startPos = startPos;
 		MyCardMgr.Instance.endPos = endPos;
@@ -20,10 +37,5 @@ public partial class DeckPage
 		{
 			MyCardMgr.Instance.cards[i] = panel.transform.GetChild(i).transform;
 		}
-		
 	}
-
-	//public void MyEventHandler()
-	//{
-	//}
 }

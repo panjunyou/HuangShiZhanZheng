@@ -42,6 +42,12 @@ public class CPU : MonoBehaviour
             if (isGameOver) break;
             var MyPviews =await MyCardView.CreatePlacable(card,MyPlaceableMgr.Instance.transform, pos,Placeable.Faction.Opponent);
 
+            //开启使用权
+            foreach (var p in MyPviews)
+            {
+                p.data.isUse = true;
+            }
+
             for (int i = 0; i < MyPviews.Count; i++)
             {
                 MyPlaceableMgr.Instance.his.Add(MyPviews[i]);

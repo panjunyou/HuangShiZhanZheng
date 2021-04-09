@@ -21,6 +21,7 @@ public partial class MainPage
 	private void MainPage_Completed(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<UnityEngine.ResourceManagement.ResourceProviders.SceneInstance> obj)
 	{
 		UIPage.CloseAllPages();
+		
 	}
 
 	//public void MyEventHandler()

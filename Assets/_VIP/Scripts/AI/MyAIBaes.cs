@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityRoyale;
 using UnityEngine.AddressableAssets;
+using System.Threading.Tasks;
 
 public enum AIState
 {
@@ -14,7 +15,7 @@ public class MyAIBaes : MonoBehaviour
 {
     public MyAIBaes target = null;//攻击目标
 
-     public AssetReference ProfInst;//投掷物
+    public AssetReference ProfInst;//投掷物
  
     public Transform FirePos;//投掷位置
 
@@ -62,4 +63,5 @@ public class MyAIBaes : MonoBehaviour
         //投掷物赋值完成才能执行
         MyProjectileInst.isUse = true;
     }
+   
 }

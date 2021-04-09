@@ -12,6 +12,7 @@ public partial class MyPlaceable
 {
     public Placeable.Faction faction=Placeable.Faction.None;
     public  float  lastBlowTime=0;
+    public bool isUse=false;//是否已经可以使用的
 
     public MyPlaceable Clone()
     {
@@ -92,140 +93,145 @@ public class MyPlaceableMgr : MonoBehaviour
             var nav = ai.GetComponent<NavMeshAgent>();
             var Anim = ai.GetComponent<Animator>();
 
-            switch (ai.state)
+            if (data.isUse)
             {
-                case AIState.Idle:
-                    {
-                        //往目标塔行进，检测是否有敌人在范围内，若是则转到Seek                      
-                        ai.target = FindNearestEnemy(ai.transform.position, data.faction);//返回没有Die状态的敌人，找不到返回Null
-
-                        if (ai.target == null) break;
-
-                        //TODO 国王塔处理 
-                        if (data.pType == Placeable.PlaceableType.Building)
+                switch (ai.state)
+                {
+                    case AIState.Idle:
                         {
+                            //往目标塔行进，检测是否有敌人在范围内，若是则转到Seek                      
+                            ai.target = FindNearestEnemy(ai.transform.position, data.faction);//返回没有Die状态的敌人，找不到返回Null
 
-                            if (IsInAttackRange(ai.transform.position, ai.target.transform.position, data.attackRange))
+                            if (ai.target == null) break;
+
+                            //TODO 国王塔处理 
+                            if (data.pType == Placeable.PlaceableType.Building)
                             {
+
+                                if (IsInAttackRange(ai.transform.position, ai.target.transform.position, data.attackRange))
+                                {
+                                    ai.state = AIState.Attack;
+                                }
+
+                                break;
+                            }
+                            else if (data.pType == Placeable.PlaceableType.Unit)
+                            {
+                                //  print($"找到最近的角色{ai.target.gameObject.name}");
+                                nav.enabled = true;
+                                Anim.SetBool("IsMoving", true);
+                                ai.state = AIState.Seek;
+                            }
+
+                        }
+                        break;
+                    case AIState.Seek:
+                        {
+                            //目标死亡就重新找目标     否则移动到目标点                           
+                            if (ai.target.state == AIState.Die)
+                            {
+                                nav.enabled = false;
+                                Anim.SetBool("IsMoving", false);
+                                ai.state = AIState.Idle;
+                                ai.target = null;
+                                break;
+                            }
+                            else
+                            {
+                                nav.SetDestination(ai.target.transform.position);
+                            }
+                            //判断是否进入攻击范围                   
+                            if (IsInAttackRange(ai.transform.position, ai.target.transform.position, p.data.attackRange))
+                            {
+                                nav.enabled = false;
+
+                                Anim.SetBool("IsMoving", false);
+
+                                //面向目标
+                                var targetPos = ai.target.transform.position;
+                                targetPos.y = ai.transform.position.y;
+                                ai.transform.LookAt(targetPos);
+
                                 ai.state = AIState.Attack;
                             }
-
-                            break;
-                        }else if (data.pType == Placeable.PlaceableType.Unit)
+                        }
+                        break;
+                    case AIState.Attack:
                         {
-                          //  print($"找到最近的角色{ai.target.gameObject.name}");
-                            nav.enabled = true;
-                            Anim.SetBool("IsMoving", true);
-                            ai.state = AIState.Seek;
-                        }
-
-                    }
-                    break;
-                case AIState.Seek:
-                    {
-                        //目标死亡就重新找目标     否则移动到目标点                           
-                        if ( ai.target.state == AIState.Die)
-                        {                           
-                            nav.enabled = false ;
-                            Anim.SetBool("IsMoving", false );
-                            ai.state = AIState.Idle;
-                            ai.target = null;
-                            break;
-                        }
-                        else
-                        {                           
-                            nav.SetDestination(ai.target.transform.position);
-                        }
-                        //判断是否进入攻击范围                   
-                        if (IsInAttackRange(ai.transform.position, ai.target.transform.position, p.data.attackRange))
-                        {
-                            nav.enabled = false;
-
-                            Anim.SetBool("IsMoving", false);
-
-                            //面向目标
-                            var targetPos = ai.target.transform.position;
-                            targetPos.y = ai.transform.position.y;
-                            ai.transform.LookAt(targetPos);
-
-                            ai.state = AIState.Attack;
-                        }
-                    }
-                    break;
-                case AIState.Attack:
-                    {
-                        //被攻击者离开攻击范围
-                        if (false == IsInAttackRange(ai.transform.position, ai.target.transform.position, data.attackRange))
-                        {
-                            if (data.pType==Placeable.PlaceableType.Unit)
+                            //被攻击者离开攻击范围
+                            if (false == IsInAttackRange(ai.transform.position, ai.target.transform.position, data.attackRange))
                             {
-                                Anim.SetBool("IsMoving", true);
-                            }                                                    
-                            ai.target = null;
-                            ai.state = AIState.Idle;
-                            break;
-                        }
+                                if (data.pType == Placeable.PlaceableType.Unit)
+                                {
+                                    Anim.SetBool("IsMoving", true);
+                                }
+                                ai.target = null;
+                                ai.state = AIState.Idle;
+                                break;
+                            }
 
-                        //被攻击者死亡
-                        if (ai.target.state == AIState.Die)
-                        {
-                            ai.target = null;
-
-                            ai.state = AIState.Idle;
-
-                            break;
-                        }
-                        //被攻击者hp值为0
-                        if (ai.target.GetComponent<MyPlaceableView>().data.hitPoints <= 0)
-                        {
-                            OnEnterDie(ai.target);                                                    
-
-                            ai.target = null;
-
-                            ai.state = AIState.Idle;
-
-                            break;
-                        }                        
-
-                        //攻击间隔
-                        if (Time.time > data.lastBlowTime + data.attackRatio)
-                        {
-                            if (Anim != null&& data.pType == Placeable.PlaceableType.Unit)
+                            //被攻击者死亡
+                            if (ai.target.state == AIState.Die)
                             {
-                                Anim.SetTrigger("Attack");
-                            }else if (Anim != null && data.pType==Placeable.PlaceableType.Building)
+                                ai.target = null;
+
+                                ai.state = AIState.Idle;
+
+                                break;
+                            }
+                            //被攻击者hp值为0
+                            if (ai.target.GetComponent<MyPlaceableView>().data.hitPoints <= 0)
                             {
-                                //国王塔攻击处理
-                                ((MyBuildingAI)ai).OnFireProjectile();   
-                            }                               
-                            data.lastBlowTime = Time.time;
-                        }                                              
-                    }
-                    break;
-                case AIState.Die:
-                    {
-                        //溶解效果
-                        var rds = p.GetComponentsInChildren<Renderer>();
+                                OnEnterDie(ai.target);
 
-                        p.DieProgress += Time.deltaTime * (1 / p.DieDuration);
+                                ai.target = null;
 
-                        foreach (var rd in rds)
-                        {
-                            rd.material.SetFloat("_DissolveFactor", p.DieProgress);
-                        }
+                                ai.state = AIState.Idle;
 
-                        if (p.DieProgress >= 1f)
-                        {
-                            //加入死亡列表
-                            if (!DesPlaceableView.Contains(p))
+                                break;
+                            }
+
+                            //攻击间隔
+                            if (Time.time > data.lastBlowTime + data.attackRatio)
                             {
-                                DesPlaceableView.Add(p);
+                                if (Anim != null && data.pType == Placeable.PlaceableType.Unit)
+                                {
+                                    Anim.SetTrigger("Attack");
+                                }
+                                else if (Anim != null && data.pType == Placeable.PlaceableType.Building)
+                                {
+                                    //国王塔攻击处理
+                                    ((MyBuildingAI)ai).OnFireProjectile();
+                                }
+                                data.lastBlowTime = Time.time;
                             }
                         }
-                      
-                    }
-                    break;
-            }
+                        break;
+                    case AIState.Die:
+                        {
+                            //溶解效果
+                            var rds = p.GetComponentsInChildren<Renderer>();
+
+                            p.DieProgress += Time.deltaTime * (1 / p.DieDuration);
+
+                            foreach (var rd in rds)
+                            {
+                                rd.material.SetFloat("_DissolveFactor", p.DieProgress);
+                            }
+
+                            if (p.DieProgress >= 1f)
+                            {
+                                //加入死亡列表
+                                if (!DesPlaceableView.Contains(p))
+                                {
+                                    DesPlaceableView.Add(p);
+                                }
+                            }
+
+                        }
+                        break;
+                }
+            }           
         }
 
         // 死亡列表处理
@@ -299,11 +305,17 @@ public class MyPlaceableMgr : MonoBehaviour
         target.state = AIState.Die;
 
         //显示GameOver画面
+        if (trhistower==null|| trMyTower==null)
+        {
+            return;
+        }
         if (target.gameObject.name.Equals(trhistower.name)|| target.gameObject.name.Equals(trMyTower.name))
         {
+
+            var fac = target_View.data.faction == Placeable.Faction.Player ? Placeable.Faction.Opponent : Placeable.Faction.Player;
             //注册消息
-            KBEngine.Event.fireOut("OnGameOver", target_View.data.faction);//正营为参数
-            UIPage.ShowPageAsync<GameOverPage>(target_View.data.faction);//可以给新显示的页面穿参数
+            KBEngine.Event.fireOut("OnGameOver", fac);//正营为参数
+            UIPage.ShowPageAsync<GameOverPage>(fac);//可以给新显示的页面穿参数
         }
 
     }

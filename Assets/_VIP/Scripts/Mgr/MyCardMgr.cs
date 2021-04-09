@@ -52,7 +52,8 @@ public class MyCardMgr : MonoBehaviour
         //await 创建卡牌到预览区(2f);
 
         //加载出牌UI
-        UIPage.ShowPageAsync<DeckPage>( async ()=> {
+        UIPage.ShowPageAsync<DeckPage>( async ()=> {           
+
             await 创建卡牌到预览区(0.5f);
             await 预览区到出牌区(0, 0.5f);
 
