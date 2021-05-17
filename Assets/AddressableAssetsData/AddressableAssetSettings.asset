@@ -18,9 +18,9 @@ MonoBehaviour:
   m_DisableCatalogUpdateOnStart: 0
   m_UniqueBundleIds: 0
   m_RemoteCatalogBuildPath:
-    m_Id: 01d5a54ce7c8f4e6fb012b4231c0e6b9
+    m_Id: 1664b6053a27a4ac5bbc7846a27f09f1
   m_RemoteCatalogLoadPath:
-    m_Id: 18d330823692a436dad1d1a4529a9d5e
+    m_Id: dba6ad3240f6c432c9ec347abe95130a
   m_overridePlayerVersion: 
   m_GroupAssets:
   - {fileID: 11400000, guid: 547db5b0649294b17befa029bafb8603, type: 2}
@@ -32,6 +32,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7b9c18b0f7b6014995b962d86526520, type: 2}
   - {fileID: 11400000, guid: d6304846947bd52458021a355ea15758, type: 2}
   - {fileID: 11400000, guid: bcf1a4d793fc6ad4c900a805f42648db, type: 2}
+  - {fileID: 11400000, guid: a22be97ec78d3eb48861f9fcaf1be1bd, type: 2}
+  - {fileID: 11400000, guid: 158f5c737e147364888ea0573970135b, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -88,13 +90,13 @@ MonoBehaviour:
       - m_Id: 8a6a19676e1b64ee9b388011d7c59596
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
       - m_Id: 1664b6053a27a4ac5bbc7846a27f09f1
-        m_Value: Assets/StreamingAssets/[BuildTarget]
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
       - m_Id: dba6ad3240f6c432c9ec347abe95130a
-        m_Value: Assets/StreamingAssets/[BuildTarget]
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: 01d5a54ce7c8f4e6fb012b4231c0e6b9
         m_Value: ServerData/[BuildTarget]
       - m_Id: 18d330823692a436dad1d1a4529a9d5e
-        m_Value: https://raw.githubusercontent.com/panjunyou/HuangShiZhanZheng/1.2/ServerData/[BuildTarget]
+        m_Value: http://locahost/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: 8a6a19676e1b64ee9b388011d7c59596
       m_Name: BuildTarget
@@ -119,6 +121,7 @@ MonoBehaviour:
     - HalloweenEvent
     - WinterEvent
     - AI
+    - BattleUnit
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 7d0f62c7e0c1381479d4215616b3b319, type: 2}
@@ -145,7 +148,7 @@ MonoBehaviour:
           m_Key: HostingServicePort
         - m_AssemblyName: mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
           m_ClassName: System.String
-          m_Data: Assets/StreamingAssets/StandaloneWindows64
+          m_Data: Library/com.unity.addressables/StreamingAssetsCopy/aa/Windows/StandaloneWindows64
           m_Key: ContentRoot
         - m_AssemblyName: mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
           m_ClassName: System.Boolean

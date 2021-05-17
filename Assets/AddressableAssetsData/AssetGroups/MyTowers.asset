@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: e2aacdb035979f748aab4813ebf512f4
   m_SerializeEntries:
   - m_GUID: 5cc01a435652dcb4199ae8ccb4574a63
-    m_Address: KingTowerBlue
+    m_Address: "\u56FD\u738B\u5854-\u84DD"
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 6955230303822147592, guid: 5cc01a435652dcb4199ae8ccb4574a63,
@@ -26,7 +26,7 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 6955230303822147592, guid: 5cc01a435652dcb4199ae8ccb4574a63,
       type: 3}
   - m_GUID: 6b4c8d3e091d36a4ba38cb7381a9afe5
-    m_Address: KingTowerRrd
+    m_Address: "\u56FD\u738B\u5854-\u7EA2"
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 4876061136531162989, guid: 6b4c8d3e091d36a4ba38cb7381a9afe5,

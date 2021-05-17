@@ -179,7 +179,7 @@ namespace UnityRoyale
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, playingFieldMask))
             {
                 if(OnCardUsed != null)
-                    OnCardUsed(cards[cardId].cardData, hit.point + inputCreationOffset, Placeable.Faction.Player); // GameManager picks this up to spawn the actual Placeable
+                    OnCardUsed(cards[cardId].cardData, hit.point + inputCreationOffset, Placeable.Faction.Red); // GameManager picks this up to spawn the actual Placeable
 
                 ClearPreviewObjects();
                 Destroy(cards[cardId].gameObject); // 删除打出去的卡牌

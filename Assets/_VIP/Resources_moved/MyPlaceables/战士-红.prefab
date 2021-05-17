@@ -982,10 +982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6826973555475864791}
   - component: {fileID: 7657649297414108623}
-  - component: {fileID: 7321173093633038108}
   - component: {fileID: 1281781896090838426}
-  - component: {fileID: 515344794563928856}
-  - component: {fileID: -8414811125483561107}
   m_Layer: 14
   m_Name: "\u6218\u58EB-\u7EA2"
   m_TagString: Untagged
@@ -1028,28 +1025,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7321173093633038108
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701704621631426976}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 10
-  avoidancePriority: 50
-  m_AngularSpeed: 1000
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 0
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
 --- !u!82 &1281781896090838426
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1059,8 +1034,7 @@ AudioSource:
   m_GameObject: {fileID: 5701704621631426976}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2952065167930763301, guid: b2f83e2012e254719a32b3d8312da356,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e54bf3d8a13612d4eaca79cea3027bc0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1147,58 +1121,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &515344794563928856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701704621631426976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92ba2e75ab169847a1b4b2debcf23c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data:
-    faction: 2
-    lastBlowTime: 0
-    id: 0
-    name: 
-    pType: 0
-    associatedPrefab: 
-    alternatePrefab: 
-    attackType: 0
-    targetType: 0
-    attackRatio: 0
-    damagePerAttack: 0
-    attackRange: 0
-    hitPoints: 0
-    attackClip: 
-    dieClip: 
-    speed: 0
-    lifeTime: 0
-    damagePerSecond: 0
-  DieDuration: 5
-  DieProgress: 0
---- !u!114 &-8414811125483561107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701704621631426976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18d2b8d698ace7d41a742b5c31450025, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  ProfInst:
-    m_AssetGUID: 
-    m_SubObjectName: 
-    m_SubObjectType: 
-  FirePos: {fileID: 0}
-  state: 0
 --- !u!1 &5709216429091363622
 GameObject:
   m_ObjectHideFlags: 0

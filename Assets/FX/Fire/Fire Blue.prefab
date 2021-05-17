@@ -4763,7 +4763,6 @@ GameObject:
   - component: {fileID: 2348266241764958832}
   - component: {fileID: 2348266241764958833}
   - component: {fileID: 2348266241764958830}
-  - component: {fileID: 5689661072978979670}
   m_Layer: 0
   m_Name: Fire Blue
   m_TagString: Untagged
@@ -9509,18 +9508,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &5689661072978979670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2348266241764958831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb5d4d8123655304287c1949be751944, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2348266242545143782
 GameObject:
   m_ObjectHideFlags: 0

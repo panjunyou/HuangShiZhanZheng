@@ -1,5 +1,22 @@
-{
-  "ver": "1.1.0",
-  "uuid": "13084686-1b35-4873-8bba-11495c90b9bf",
-  "subMetas": {}
-}
+fileFormatVersion: 2
+guid: 96c7822d279eb12498f704ff69dfb579
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Noto Naskh Arabic
+  fontNames:
+  - Noto Naskh Arabic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

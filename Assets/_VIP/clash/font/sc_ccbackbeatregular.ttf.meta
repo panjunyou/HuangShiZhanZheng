@@ -1,5 +1,22 @@
-{
-  "ver": "1.1.0",
-  "uuid": "bc22b266-a8ce-412e-8893-f3b9712ddbc8",
-  "subMetas": {}
-}
+fileFormatVersion: 2
+guid: 80541f0242553d94bb24efdbd25f317e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SC CCBackBeat
+  fontNames:
+  - SC CCBackBeat
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -17,36 +17,33 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 55dccd03878067a4093a6727ea250bab
   m_SerializeEntries:
-  - m_GUID: bbbf735d73da0264a9dd528a95e252b0
-    m_Address: Arrow
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 953002537907380271, guid: bbbf735d73da0264a9dd528a95e252b0,
-      type: 3}
-    m_TargetAsset: {fileID: 953002537907380271, guid: bbbf735d73da0264a9dd528a95e252b0,
-      type: 3}
   - m_GUID: 2d5a40e9a4a6ffe49912e6a6a7a64fa7
-    m_Address: Fire Blue
+    m_Address: "\u706B\u7403-\u84DD"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - BattleUnit
     m_MainAsset: {fileID: 2348266241764958831, guid: 2d5a40e9a4a6ffe49912e6a6a7a64fa7,
       type: 3}
     m_TargetAsset: {fileID: 2348266241764958831, guid: 2d5a40e9a4a6ffe49912e6a6a7a64fa7,
       type: 3}
   - m_GUID: 34be0ba03aab5054085a63cfb1f10ef6
-    m_Address: Fire Red
+    m_Address: "\u706B\u7403-\u7EA2"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - BattleUnit
     m_MainAsset: {fileID: 2348266241764958831, guid: 34be0ba03aab5054085a63cfb1f10ef6,
       type: 3}
     m_TargetAsset: {fileID: 2348266241764958831, guid: 34be0ba03aab5054085a63cfb1f10ef6,
       type: 3}
-  - m_GUID: 65a08c8f3c93ef045b64920e2fc6ab8e
-    m_Address: Main
+  - m_GUID: bbbf735d73da0264a9dd528a95e252b0
+    m_Address: "\u5251"
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 102900000, guid: 65a08c8f3c93ef045b64920e2fc6ab8e, type: 3}
-    m_TargetAsset: {fileID: 102900000, guid: 65a08c8f3c93ef045b64920e2fc6ab8e, type: 3}
+    m_SerializedLabels:
+    - BattleUnit
+    m_MainAsset: {fileID: 953002537907380271, guid: bbbf735d73da0264a9dd528a95e252b0,
+      type: 3}
+    m_TargetAsset: {fileID: 953002537907380271, guid: bbbf735d73da0264a9dd528a95e252b0,
+      type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 62fd5e501abef4d188f123698eca5c92, type: 2}
   m_SchemaSet:

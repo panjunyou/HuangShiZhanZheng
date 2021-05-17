@@ -17,51 +17,55 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: c119d68c9849f27428d45d4242a327ba
   m_SerializeEntries:
-  - m_GUID: b388405d7296fab4daaebc1d1ea380f8
-    m_Address: "\u5F13\u7BAD\u624B-\u7EA2"
+  - m_GUID: 94203d14f39622d4388f4ff735736332
+    m_Address: "\u6CD5\u5E08-\u84DD"
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 5537164977549460556, guid: b388405d7296fab4daaebc1d1ea380f8,
-      type: 3}
-    m_TargetAsset: {fileID: 5537164977549460556, guid: b388405d7296fab4daaebc1d1ea380f8,
-      type: 3}
-  - m_GUID: 23b5dd7bd5e0dbb4698b565063c2bc83
+    m_SerializedLabels:
+    - BattleUnit
+    m_MainAsset: {fileID: 1122871589, guid: 94203d14f39622d4388f4ff735736332, type: 3}
+    m_TargetAsset: {fileID: 1122871589, guid: 94203d14f39622d4388f4ff735736332, type: 3}
+  - m_GUID: a671d8aa5987e0d42b05dbdfe74159fb
     m_Address: "\u5F13\u7BAD\u624B-\u84DD"
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 4506006686708116928, guid: 23b5dd7bd5e0dbb4698b565063c2bc83,
+    m_SerializedLabels:
+    - BattleUnit
+    m_MainAsset: {fileID: 5537164977549460556, guid: a671d8aa5987e0d42b05dbdfe74159fb,
       type: 3}
-    m_TargetAsset: {fileID: 4506006686708116928, guid: 23b5dd7bd5e0dbb4698b565063c2bc83,
-      type: 3}
-  - m_GUID: dd88c9f57e2a94542908ae26add52193
-    m_Address: "\u6218\u58EB-\u7EA2"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 5701704621631426976, guid: dd88c9f57e2a94542908ae26add52193,
-      type: 3}
-    m_TargetAsset: {fileID: 5701704621631426976, guid: dd88c9f57e2a94542908ae26add52193,
-      type: 3}
-  - m_GUID: b6798bc1ecf047a409bfd07909e77d6d
-    m_Address: "\u6218\u58EB-\u84DD"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 2803772846224482086, guid: b6798bc1ecf047a409bfd07909e77d6d,
-      type: 3}
-    m_TargetAsset: {fileID: 2803772846224482086, guid: b6798bc1ecf047a409bfd07909e77d6d,
+    m_TargetAsset: {fileID: 5537164977549460556, guid: a671d8aa5987e0d42b05dbdfe74159fb,
       type: 3}
   - m_GUID: a7c2d598b5c52d64d9d3eadd02a63589
     m_Address: "\u6CD5\u5E08-\u7EA2"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - BattleUnit
     m_MainAsset: {fileID: 1122871589, guid: a7c2d598b5c52d64d9d3eadd02a63589, type: 3}
     m_TargetAsset: {fileID: 1122871589, guid: a7c2d598b5c52d64d9d3eadd02a63589, type: 3}
-  - m_GUID: b46cc5056269c5a4e938c0f65a25ea97
-    m_Address: "\u6CD5\u5E08-\u84DD"
+  - m_GUID: b388405d7296fab4daaebc1d1ea380f8
+    m_Address: "\u5F13\u7BAD\u624B-\u7EA2"
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 8584991783828831444, guid: b46cc5056269c5a4e938c0f65a25ea97,
+    m_SerializedLabels:
+    - BattleUnit
+    m_MainAsset: {fileID: 5537164977549460556, guid: b388405d7296fab4daaebc1d1ea380f8,
       type: 3}
-    m_TargetAsset: {fileID: 8584991783828831444, guid: b46cc5056269c5a4e938c0f65a25ea97,
+    m_TargetAsset: {fileID: 5537164977549460556, guid: b388405d7296fab4daaebc1d1ea380f8,
+      type: 3}
+  - m_GUID: dd88c9f57e2a94542908ae26add52193
+    m_Address: "\u6218\u58EB-\u7EA2"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BattleUnit
+    m_MainAsset: {fileID: 5701704621631426976, guid: dd88c9f57e2a94542908ae26add52193,
+      type: 3}
+    m_TargetAsset: {fileID: 5701704621631426976, guid: dd88c9f57e2a94542908ae26add52193,
+      type: 3}
+  - m_GUID: e4fbfcede42a2bd41a5f1e5d281a7183
+    m_Address: "\u6218\u58EB-\u84DD"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BattleUnit
+    m_MainAsset: {fileID: 5701704621631426976, guid: e4fbfcede42a2bd41a5f1e5d281a7183,
+      type: 3}
+    m_TargetAsset: {fileID: 5701704621631426976, guid: e4fbfcede42a2bd41a5f1e5d281a7183,
       type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 62fd5e501abef4d188f123698eca5c92, type: 2}

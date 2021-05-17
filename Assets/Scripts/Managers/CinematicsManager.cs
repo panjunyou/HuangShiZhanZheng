@@ -12,7 +12,7 @@ namespace UnityRoyale
 
 		public void PlayCollapseCutscene(Placeable.Faction f)
 		{
-			if(f == Placeable.Faction.Player)
+			if(f == Placeable.Faction.Red)
 			{
 				redCastleCollapse.Play();
 			}

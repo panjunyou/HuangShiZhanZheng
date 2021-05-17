@@ -66,8 +66,8 @@ namespace UnityRoyale
         private void Start()
         {
 			//Insert castles into lists
-			SetupPlaceable(playersCastle, castlePData, Placeable.Faction.Player);
-            SetupPlaceable(opponentCastle, castlePData, Placeable.Faction.Opponent);
+			SetupPlaceable(playersCastle, castlePData, Placeable.Faction.Red);
+            SetupPlaceable(opponentCastle, castlePData, Placeable.Faction.Blue);
 
 			cardManager.LoadDeck();
             CPUOpponent.LoadDeck();
@@ -166,9 +166,9 @@ namespace UnityRoyale
             switch(t)
             {
                 case Placeable.PlaceableTarget.Both:
-                    return (f == Placeable.Faction.Player) ? allOpponents : allPlayers;
+                    return (f == Placeable.Faction.Red) ? allOpponents : allPlayers;
 				case Placeable.PlaceableTarget.OnlyBuildings:
-                    return (f == Placeable.Faction.Player) ? opponentBuildings : playerBuildings;
+                    return (f == Placeable.Faction.Red) ? opponentBuildings : playerBuildings;
 				default:
 					Debug.LogError("What faction is this?? Not Player nor Opponent.");
 					return null;
@@ -200,9 +200,9 @@ namespace UnityRoyale
             for(int pNum=0; pNum<cardData.placeablesData.Length; pNum++)
             {
                 PlaceableData pDataRef = cardData.placeablesData[pNum];
-                Quaternion rot = (pFaction == Placeable.Faction.Player) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f);
+                Quaternion rot = (pFaction == Placeable.Faction.Red) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f);
                 //Prefab to spawn is the associatedPrefab if it's the Player faction, otherwise it's alternatePrefab. But if alternatePrefab is null, then first one is taken
-                GameObject prefabToSpawn = (pFaction == Placeable.Faction.Player) ? pDataRef.associatedPrefab : ((pDataRef.alternatePrefab == null) ? pDataRef.associatedPrefab : pDataRef.alternatePrefab);
+                GameObject prefabToSpawn = (pFaction == Placeable.Faction.Red) ? pDataRef.associatedPrefab : ((pDataRef.alternatePrefab == null) ? pDataRef.associatedPrefab : pDataRef.alternatePrefab);
                 GameObject newPlaceableGO = Instantiate<GameObject>(prefabToSpawn, position + cardData.relativeOffsets[pNum], rot);
 
 				if (SceneManager.GetActiveScene().buildIndex >= 8)
@@ -377,7 +377,7 @@ namespace UnityRoyale
         {
 			allThinkingPlaceables.Add(p);
 
-			if(p.faction == Placeable.Faction.Player)
+			if(p.faction == Placeable.Faction.Red)
             {
 				allPlayers.Add(p);
             	
@@ -386,7 +386,7 @@ namespace UnityRoyale
 				else
                     playerBuildings.Add(p);
             }
-            else if(p.faction == Placeable.Faction.Opponent)
+            else if(p.faction == Placeable.Faction.Blue)
             {
 				allOpponents.Add(p);
             	
@@ -405,7 +405,7 @@ namespace UnityRoyale
         {
 			allThinkingPlaceables.Remove(p);
 
-			if(p.faction == Placeable.Faction.Player)
+			if(p.faction == Placeable.Faction.Red)  
             {
 				allPlayers.Remove(p);
             	
@@ -414,7 +414,7 @@ namespace UnityRoyale
 				else
                     playerBuildings.Remove(p);
             }
-            else if(p.faction == Placeable.Faction.Opponent)
+            else if(p.faction == Placeable.Faction.Blue)
             {
 				allOpponents.Remove(p);
             	

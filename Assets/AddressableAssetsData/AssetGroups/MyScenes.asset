@@ -17,24 +17,18 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 43a1fa9fe5412f14ca1105978f8549ae
   m_SerializeEntries:
-  - m_GUID: 9afdf1b4da11dfe4ab030c9e2424dfef
-    m_Address: Battle
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 102900000, guid: 9afdf1b4da11dfe4ab030c9e2424dfef, type: 3}
-    m_TargetAsset: {fileID: 102900000, guid: 9afdf1b4da11dfe4ab030c9e2424dfef, type: 3}
   - m_GUID: 35c71385fb4aefd49a3b996a815acab1
     m_Address: Start
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 102900000, guid: 35c71385fb4aefd49a3b996a815acab1, type: 3}
     m_TargetAsset: {fileID: 102900000, guid: 35c71385fb4aefd49a3b996a815acab1, type: 3}
-  - m_GUID: 5e6f056a915cee24a8a283baf4777f16
-    m_Address: UIReference
+  - m_GUID: 9afdf1b4da11dfe4ab030c9e2424dfef
+    m_Address: Battle
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 102900000, guid: 5e6f056a915cee24a8a283baf4777f16, type: 3}
-    m_TargetAsset: {fileID: 102900000, guid: 5e6f056a915cee24a8a283baf4777f16, type: 3}
+    m_MainAsset: {fileID: 102900000, guid: 9afdf1b4da11dfe4ab030c9e2424dfef, type: 3}
+    m_TargetAsset: {fileID: 102900000, guid: 9afdf1b4da11dfe4ab030c9e2424dfef, type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 62fd5e501abef4d188f123698eca5c92, type: 2}
   m_SchemaSet:

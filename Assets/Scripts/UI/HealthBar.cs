@@ -23,7 +23,7 @@ namespace UnityRoyale
             originalHP = currentHP = p.hitPoints;
             transformToFollow = p.transform;
 
-            bar.GetComponent<Image>().color = (p.faction == Placeable.Faction.Player) ? red : blue;
+            bar.GetComponent<Image>().color = (p.faction == Placeable.Faction.Red) ? red : blue;
             
             wholeWidget.transform.localPosition = new Vector3(0f,
 															(p.pType == Placeable.PlaceableType.Unit) ? 3f : 6f,

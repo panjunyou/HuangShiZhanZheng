@@ -23,6 +23,7 @@ namespace UnityRoyale
             Building, // 建筑物（生产游戏单位）
             Spell, // 法术（对目标造成瞬时或者持续性的伤害）
             Castle, // 城堡（特殊类型的游戏单位）
+            Guard,//国王塔弓箭手
         }
 
         public enum PlaceableTarget
@@ -34,8 +35,14 @@ namespace UnityRoyale
 
         public enum Faction
         {
-            Player, //Red
-            Opponent, //Blue
+            /// <summary>
+            /// Red
+            /// </summary>
+            Red, //Red
+            /// <summary>
+            /// Blue
+            /// </summary>
+            Blue, //Blue
             None,
         }
     }
